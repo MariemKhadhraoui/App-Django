@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-strped mt-5">
+    <tr>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Image</td>
+        <td>Organizer</td>
+    </tr>
+    {% for event in events %}
+    <tr>
+        <td>{{ event.title}}</td>
+        <td>{{ event.description}}</td>
+        <td><img src="{{ event.imageEvent.url }}" alt=""></td>
+        <td> {{event.organized}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
